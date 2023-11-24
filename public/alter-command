@@ -1,0 +1,36 @@
+
+
+function getInstaID($username)
+{
+
+    $username = strtolower($username); // sanitization
+    $token = "InsertThatHere";
+    $url = "https://api.instagram.com/v1/users/search?q=".$username."&access_token=".$token;
+    $get = file_get_contents($url);
+    $json = json_decode($get);
+
+    foreach($json->data as $user)
+    {
+        if($user->username == $username)
+        {
+            return $user->id;
+        }
+    }
+
+    return '00000000'; // return this if nothing is found
+}
+
+echo getInstaID('aliciakeys');
+
+
+
+
+<?php 
+$url = 'https://api.instagram.com/v1/users/XXXX?access_token=XXXX';
+$api_response = file_get_contents($url);
+$record = json_decode($api_response);
+echo $record->data->counts->followed_by;
+
+// if nothing is echoed try
+echo '<pre>' . print_r($api_response, true) . '</pre>';
+echo '<pre>' . print_r($record, true) . '</pre>';

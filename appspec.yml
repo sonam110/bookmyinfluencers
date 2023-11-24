@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/auto-deploy/bmi-api
+    overwrite: true
+    owner: ubuntu
+    mode: 755
+hooks:
+  AfterInstall:
+    - location: ./DevOps/AfterDeploy.sh
+      runas: ubuntu

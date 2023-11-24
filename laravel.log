@@ -1,0 +1,11 @@
+[2023-11-06 13:21:04] local.INFO:   
+[2023-11-06 13:21:04] local.INFO: array (
+  'error' => 
+  array (
+    'message' => 'Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request',
+    'type' => 'OAuthException',
+    'code' => 100,
+    'error_subcode' => 36008,
+    'fbtrace_id' => 'A37BAL13ivnIuGREdKFhJYX',
+  ),
+)  
